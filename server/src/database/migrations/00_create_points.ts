@@ -16,11 +16,6 @@ export async function up(knex: Knex){
 }
 
 export async function down(knex: Knex){
-<<<<<<< HEAD
     //voltar atras(deletar a tabela)
     return knex.schema.dropTable('point');
 }
-=======
-    return knex.schema.dropTable('points');
-}
->>>>>>> e929844c7f65ca3d9fe9de1c6ee88dc184b59b1d
