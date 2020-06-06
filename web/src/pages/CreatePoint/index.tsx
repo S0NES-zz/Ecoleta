@@ -91,9 +91,8 @@ const CreatePoint = () => {
 
      //Funcao para mudar a selecao do Estado
     function handleSelectCity(event: ChangeEvent<HTMLSelectElement>) {
-      const city = event.target.value;
-
-      setSelectedCity(city);
+        const city = event.target.value;
+        setSelectedCity(city);
     }
 
      //Funcao para pegar a latitude e longitude 
@@ -107,7 +106,7 @@ const CreatePoint = () => {
 
     //Retornar o valor no Input de dados
     function handleInputChange(event: ChangeEvent<HTMLInputElement>){
-        const { name, value } = event.target;
+        const { name, value} = event.target;
         setFormData({...formData, [name]: value});
     }
 
@@ -182,7 +181,7 @@ const CreatePoint = () => {
               </div>
               <div className="field">
                 <label htmlFor="name">Whatsapp</label>
-                <input type="text" name="Whatsapp" id="Whatsapp" onChange={handleInputChange}/>
+                <input type="text" name="whatsapp" id="whatsapp" onChange={handleInputChange}/>
               </div>
             </div>
           </fieldset>
@@ -208,15 +207,13 @@ const CreatePoint = () => {
                   name="uf"
                   id="uf"
                   onChange={handleSelectUf}
-                  value={selectedUf}
-                >
+                  value={selectedUf}>
                   <option value="0">Selecione uma UF</option>
                   {ufs.map((uf) => (
                     <option key={uf} value={uf}>
                       {uf}
                     </option>
-                  ))}
-                  ;
+                  ))};
                 </select>
               </div>
               <div className="field">
@@ -225,13 +222,10 @@ const CreatePoint = () => {
                   onChange={handleSelectCity}
                   name="city"
                   id="city"
-                  value={selectedCity}
-                >
+                  value={selectedCity}>
                   <option value="0">Selecione uma Cidade</option>
                   {cities.map((city) => (
-                    <option key={city} value="{city}">
-                      {city}
-                    </option>
+                    <option key={city} value={city}>{city}</option>
                   ))}
                   ;
                 </select>
