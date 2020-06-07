@@ -1,15 +1,39 @@
-import express from 'express';
-import cors from 'cors'
-import routes from './routes';
+import express, { Request, Response, Express } from 'express';
+import { errors } from 'celebrate';
+import cors from 'cors';
 import path from 'path';
+import routes from './routes';
 
-const app = express();
+class Server {
+  private app: Express;
 
-app.use(cors())
-app.use(express.json());
-app.use(routes);
+  constructor() {
+    this.app = express();
+  }
 
+  private middlewares() {
+    this.app.use(express.json());
+    this.app.use(cors());
+    this.app.use(routes);
+    this.app.use(
+      '/uploads',
+      express.static(path.resolve(__dirname, '..', 'uploads'))
+    );
+    this.app.use(errors());
+  }
 
-app.use('/uploads', express.static(path.resolve(__dirname,  '..', 'uploads')));
+  private listen() {
+    const port = 3333;
+    this.app.listen(port, () => {
+      console.log(`Listening on port: ${port}`);
+    });
+  }
 
-app.listen(3333);
+  public startUp(): void {
+    this.middlewares();
+    this.listen();
+  }
+}
+
+const server = new Server();
+server.startUp();

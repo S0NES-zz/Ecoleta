@@ -1,23 +1,19 @@
 import { Request, Response } from 'express';
+
 import knex from '../database/connection';
 
 class ItemsController {
-    static index(arg0: string, index: any) {
-        throw new Error("Method not implemented.");
-    }
-    async index(request: Request, response: Response) {
-      const items = await knex('items').select('*');
+  async list(request: Request, response: Response) {
+    const items = await knex('items').select('*');
 
-      const serializedItems = items.map(item => {
-          return {
-              id: item.id,
-              title: item.title,
-              image_url: `http://localhost:3333/uploads/${item.image}`,
-          };
-      });
-
-      return response.json(serializedItems);
-
-    };
+    const serializedItems = items.map((item) => {
+      return {
+        ...item,
+        ...{ image: `http://localhost:3333/uploads/${item.image}` },
+      };
+    });
+    return response.json(serializedItems);
+  }
 }
+
 export default ItemsController;
