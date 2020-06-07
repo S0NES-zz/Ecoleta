@@ -1,5 +1,5 @@
 # Ecoleta
-É um software para cadastrar ponto de coleta de lixos que não são faceis de reciclar
+Software para cadastrar ponto de coleta de lixos que não são faceis de reciclar
 
 ## Motivação
 Aprender e Colocar em prática os conhecimentos adquiridos na NLW(Next Level Week) para o desenvolvimento de uma aplicação de página única (Single Page Application) usando: 
