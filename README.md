@@ -5,7 +5,7 @@ Aprender e Colocar em prática os conhecimentos adquiridos na NLW(Next Level Wee
 
 * ReactJS no Front-end
 * NodeJS no Back-end
-* ReactNative & Expo nbo Mobile
+* ReactNative & Expo no Mobile
 
 ## Contribuições
 Tem alguma ideia para melhorar o projeto? Implementação de funcionalidade? Abra uma issue para conversarmos sobre!
