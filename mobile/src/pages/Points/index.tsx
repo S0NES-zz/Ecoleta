@@ -178,7 +178,7 @@ const Points = () => {
               <SvgUri
                 width={42}
                 height={42}
-                uri={item.image.replace('localhost', '192.168.0.11')}
+                uri={item.image.replace("localhost", "192.168.0.194")}
               />
               <Text style={styles.itemTitle}>{item.title}</Text>
             </TouchableOpacity>
